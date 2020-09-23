@@ -12,9 +12,9 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             GetComponent<Attacker>().SetMoveSpeed(0f);
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject);
             GetComponent<Animator>().enabled = false;
-            var VFX = Instantiate(deatVFX, transform.position, Quaternion.identity);
+            var VFX = Instantiate(deatVFX, transform.position, transform.rotation);
             Destroy(VFX, 1f);
         }
     }
